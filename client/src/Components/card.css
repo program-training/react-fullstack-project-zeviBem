@@ -1,0 +1,12 @@
+.cardTrip {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 400px;
+    border: 2px black solid;
+    border-radius: 33px ;
+}
+
+.imgCard {
+    width: 300px;
+}

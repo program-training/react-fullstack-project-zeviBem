@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState,createContext } from 'react'
 import './App.css'
+import Home from './Components/Home';
+import Trips from './Components/Trips';
+import UserLogin from './Components/UserLogin';
+import UserRegistration from './Components/UserRegistration';
+import {Container} from "react-bootstrap"
+import { Routes, Route } from 'react-router-dom';
+import { Navbar } from 'react-bootstrap';
+import NewTripForm from './Components/NewTripForm';
+import TripDetail from './Components/TripDetail';
+import UpdateTripForm from './Components/UpdateTripForm';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar/>
+      <Container>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/trips' element={<Trips/>}/>
+          <Route path='/userRegistration' element={<UserRegistration/>}/>
+          <Route path='/userLogin' element={<UserLogin/>}/>
+          <Route path='/newTripForm' element={<NewTripForm/>}/>
+          <Route path='/tripDetail' element ={<TripDetail/>}/>
+          <Route path='/updateTrip' element ={<UpdateTripForm/>}/>
+        </Routes>
+      </Container>
     </>
   )
 }
-
 export default App
