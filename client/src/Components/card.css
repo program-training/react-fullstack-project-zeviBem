@@ -10,3 +10,16 @@
 .imgCard {
     width: 300px;
 }
+
+.buttonDelete {
+    background-color: #f44336; 
+    color: white;
+    border: none; 
+    padding: 10px 15px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+}
+
+.buttonDelete:hover {
+    background-color: #d32f2f;
+}

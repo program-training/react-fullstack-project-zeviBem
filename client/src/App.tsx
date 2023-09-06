@@ -22,7 +22,7 @@ function App() {
           <Route path='/userRegistration' element={<UserRegistration/>}/>
           <Route path='/userLogin' element={<UserLogin/>}/>
           <Route path='/newTripForm' element={<NewTripForm/>}/>
-          <Route path='/tripDetail' element ={<TripDetail/>}/>
+          <Route path='/tripDetail/:id' element ={<TripDetail/>}/>
           <Route path='/updateTrip' element ={<UpdateTripForm/>}/>
         </Routes>
       </Container>
