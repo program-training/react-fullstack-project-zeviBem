@@ -23,7 +23,7 @@ function App() {
           <Route path='/userLogin' element={<UserLogin/>}/>
           <Route path='/newTripForm' element={<NewTripForm/>}/>
           <Route path='/tripDetail/:id' element ={<TripDetail/>}/>
-          <Route path='/updateTrip' element ={<UpdateTripForm/>}/>
+          <Route path='/result/updateTrip/:id' element ={<UpdateTripForm/>}/>
         </Routes>
       </Container>
     </>

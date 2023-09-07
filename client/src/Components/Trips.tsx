@@ -14,6 +14,8 @@ interface MyTrip {
 
 export default function Trips() {
     const [tripData, setTripData] = useState<MyTrip[]>([]);
+    const [editingCard, setEditingCard] = useState(null);
+
   
     useEffect(() => {
         axios.get("http://localhost:3000/api/trips")
@@ -39,12 +41,15 @@ export default function Trips() {
             <h2>Trips</h2>
             <button onClick={() => navigate('/')}>to the main page</button>
             <button onClick={() => navigate('/newTripForm')}>new trip</button>
+            
             {
                 <div>
                     <h1>Trips</h1>
                     
                         {tripData.map((trip) =>(
-                            <div className="cardTrip" key={trip.id} onClick={() => navigate(`/tripDetail/${trip.id}`)}>
+                            
+                            <div className="cardTrip" key={trip.id} >
+                                <button onClick={() => navigate(`/result/updateTrip/${trip.id}`)}>Edit</button>
                                 <h2>{trip.name}</h2>
                                 <p>Destination: {trip.destination}</p>
                                 <p>Start Data: {trip.startDate}</p>
@@ -60,7 +65,7 @@ export default function Trips() {
     )
 
 
-
+   // onClick={() => navigate(`/tripDetail/${trip.id}`)
 
 
 

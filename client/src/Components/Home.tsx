@@ -12,7 +12,6 @@ export default function Home() {
             <header >
             <button  onClick={() => navigate('/tripDetail')}>Trip Detail</button>
             <button  onClick={() => navigate('/newTripForm')}>New trip</button>
-            <button  onClick={() => navigate('/updateTrip')}>Update trip</button>
             </header>
             <h1>Home</h1>
             <button  onClick={() => navigate('/trips')}>to all trips</button>

@@ -28,7 +28,7 @@ export default function UpdateTripForm() {
 
         const onSubmit = async (updateData: FormData) => {
             try {
-            const response = await axios.post(`http://localhost:3000/api/trips/${id}`,updateData, config)
+            const response = await axios.put(`http://localhost:3000/api/trips/${id}`,updateData, config)
             console.log("you logged!", response.data)
             }
             catch (error) {
