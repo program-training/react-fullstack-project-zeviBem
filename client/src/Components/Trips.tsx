@@ -1,4 +1,4 @@
-import React ,{useState, useEffect} from "react";
+import {useState, useEffect} from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import "./card.css"
@@ -13,10 +13,8 @@ interface MyTrip {
 }
 
 export default function Trips() {
-    const [tripData, setTripData] = useState<MyTrip[]>([]);
-    const [editingCard, setEditingCard] = useState(null);
 
-  
+    const [tripData, setTripData] = useState<MyTrip[]>([]);
     useEffect(() => {
         axios.get("http://localhost:3000/api/trips")
         .then((response) => {setTripData(response.data);})
@@ -24,10 +22,6 @@ export default function Trips() {
         
     }, [])
     const navigate = useNavigate();
-
-    // const navigateToTripDetail = (tripId: string) => {
-    //     window.location.href = `/trips/${tripId}`;
-    // };
     const handleDelete = (tripId:string) => {
         const updatedTripData = [...tripData];
         const index = updatedTripData.findIndex((trip) => trip.id === tripId)
@@ -37,27 +31,25 @@ export default function Trips() {
         }
     }
     return (
-        <div>
-            <h2>Trips</h2>
+        <div className="containerPage">
+            <>
+            <h1>Trips</h1>
             <button onClick={() => navigate('/')}>to the main page</button>
             <button onClick={() => navigate('/newTripForm')}>new trip</button>
-            
+            </>
             {
-                <div>
-                    <h1>Trips</h1>
-                    
-                        {tripData.map((trip) =>(
-                            
-                            <div className="cardTrip" key={trip.id} >
-                                <button onClick={() => navigate(`/result/updateTrip/${trip.id}`)}>Edit</button>
+                <div  className="containerCard">                                   
+                        {tripData.map((trip) =>(                            
+                            <div className="cardTrip" key={trip.id} onClick={() => navigate(`/tripDetail/${trip.id}`)}>
                                 <h2>{trip.name}</h2>
-                                <p>Destination: {trip.destination}</p>
-                                <p>Start Data: {trip.startDate}</p>
-                                <p>End Data: {trip.endDate}</p>
                                 <img src={trip.image} alt={trip.name} className="imgCard"/>
+                                <button onClick={(e) =>{e.stopPropagation(); navigate(`/result/updateTrip/${trip.id}`)}} className="buttonEdit">Edit</button>
                                 <button className="buttonDelete" onClick={ (e) =>{e.stopPropagation(); handleDelete(trip.id)} }>DELETE</button>
-                            </div>
+                            </div>                                              
+
+                            
                         ))}
+
                     
                 </div>
             }
@@ -65,7 +57,7 @@ export default function Trips() {
     )
 
 
-   // onClick={() => navigate(`/tripDetail/${trip.id}`)
+   // 
 
 
 

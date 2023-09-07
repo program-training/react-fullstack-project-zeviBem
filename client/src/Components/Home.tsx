@@ -1,22 +1,16 @@
-import React, {useState, useEffect} from "react";
-import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import TripDetail from "./TripDetail";
-import UserLogin from "./UserLogin";
-import UpdateTripForm from "./UpdateTripForm";
-
+import './home.css'
 export default function Home() {
     const navigate = useNavigate();
     return (
-        <div>
-            <header >
-            <button  onClick={() => navigate('/tripDetail')}>Trip Detail</button>
-            <button  onClick={() => navigate('/newTripForm')}>New trip</button>
-            </header>
-            <h1>Home</h1>
-            <button  onClick={() => navigate('/trips')}>to all trips</button>
-            <button onClick={() => navigate('/userRegistration')}>beyond registration</button>
-            <button onClick={() => navigate('/userLogin')}>beyond connecting</button>
+        <div className='ccc'>
+            <div className='upMenu'>
+                <button  onClick={() => navigate('/trips')}>to all trips</button>
+                <button onClick={() => navigate('/userRegistration')}>enrollment</button>
+                <button onClick={() => navigate('/userLogin')}>log in</button>
+            </div>
+            <h1>Welcome to the great travel site, here you can find the best vacation!</h1>
+
         </div>
     )}
 

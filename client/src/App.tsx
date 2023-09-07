@@ -1,4 +1,3 @@
-import { useState,createContext } from 'react'
 import './App.css'
 import Home from './Components/Home';
 import Trips from './Components/Trips';

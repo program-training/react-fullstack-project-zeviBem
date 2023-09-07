@@ -1,25 +1,47 @@
+.containerPage {
+    background-color: rgb(206, 242, 242);
+}
 .cardTrip {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    width: 400px;
+    justify-content: center;
+    width: 200px;
+    height: 350px;
     border: 2px black solid;
     border-radius: 33px ;
+    background-color: lightblue;
+   
+    margin: 4px;
 }
 
 .imgCard {
-    width: 300px;
+    justify-content: center;
+    width: 200px;
+    height: 150px;
 }
 
 .buttonDelete {
+
     background-color: #f44336; 
     color: white;
     border: none; 
     padding: 10px 15px; 
     cursor: pointer; 
-    border-radius: 5px; 
+    border-radius: 33px 0px 33px 0px; 
+    width: 100%;
+   
 }
 
 .buttonDelete:hover {
-    background-color: #d32f2f;
+    background-color: #d4dc96;
+}
+
+.containerCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.buttonEdit {
+    border-radius: 33px 0px 33px 0px; 
+    background-color: aquamarine;
 }

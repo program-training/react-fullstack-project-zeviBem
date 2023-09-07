@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form"
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from "react";
 import axios from "axios";
 
 type FormData = {
@@ -19,9 +18,6 @@ export default function UpdateTripForm() {
     const { register, handleSubmit } = useForm<FormData>();
     const navigate = useNavigate();
     const { id } = useParams();
-    //const [tripData, setTripData] = useState<FormData | null>(null);
-    
-
     const config = {
     headers: { authorization : "test-token" },
     };
@@ -43,9 +39,6 @@ export default function UpdateTripForm() {
         <div className="container">
             <h1>Update Trip</h1>
             <form onSubmit={handleSubmit(onSubmit)} className=''>
-                <label> id:
-                <input type="text" {...register("name")}/>
-                </label>
                 <label> name:
                 <input type="text" {...register("name")}/>
                 </label>

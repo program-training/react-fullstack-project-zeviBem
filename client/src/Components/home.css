@@ -1,0 +1,11 @@
+.ccc {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.upMenu {
+
+    align-items: flex-start ;
+    justify-content: right;
+}
